@@ -14,7 +14,6 @@ public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-
     @Override
     public void saveUser(User user) {
         entityManager.persist(user);
@@ -43,12 +42,10 @@ public class UserDaoImpl implements UserDao {
 
     }
 
-
     @Override
     @SuppressWarnings("unchecked")
     public List<User> getAllUsers() {
-        return entityManager.createQuery(
-                "select u from User u").getResultList();
+        return entityManager.createQuery("select u from User u").getResultList();
     }
 
 

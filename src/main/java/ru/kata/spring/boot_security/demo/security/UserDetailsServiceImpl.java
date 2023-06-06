@@ -13,8 +13,6 @@ import javax.transaction.Transactional;
 @Service
 @Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {
-
-
     private UserServiceImpl userService;
     @Autowired
     public UserDetailsServiceImpl(UserServiceImpl userService) {

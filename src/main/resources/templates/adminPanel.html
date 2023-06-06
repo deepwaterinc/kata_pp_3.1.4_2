@@ -16,16 +16,14 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" th:text="${user1.getUsername()} + ' with roles: ' + ${user1.rolesToString()}" href="#">ЕМАИЛ
-        И
-        РОЛЬ</a>
-    </div>
+    <span class="navbar-brand" th:text="${user1.getUsername()} + ' with roles: ' + ${user1.rolesToString()}">email, role</span>
     <a th:href="@{/logout}" class="btn btn-link text-white-50">Logout</a>
-    </div>
-    </div>
 </nav>
+
 <div class="row no-gutters ">
+
     <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-md-block sidebar collapse">
         <div class="position-sticky pt-2">
             <ul class="nav nav-pills flex-column">
@@ -44,6 +42,7 @@
     </nav>
 
     <div class="col-md-10 bg-light">
+
         <div class="tab-content">
             <div class="container-fluid">
                 <h1>Admin panel</h1>
@@ -59,6 +58,7 @@
                 </ul>
 
                 <div class="tab-content" id="nav-tabContent">
+
                     <div class="tab-pane fade show active" id="nav-users" role="tabpanel"
                          aria-labelledby="nav-home-tab">
                         <div class="panel panel-default active">
@@ -79,7 +79,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:each="user: ${users}">
+                                    <tr th:each="user : ${users}">
                                         <td th:text="${user.getId()}"></td>
                                         <td th:text="${user.getFirstName()}"></td>
                                         <td th:text="${user.getLastName()}"></td>
@@ -179,7 +179,6 @@
                                         </form>
                                     </div>
 
-
                                     <div th:each="user : ${users}" th:id="'editModal-' + ${user.id}"
                                          class="modal fade" tabindex="-1" role="dialog"
                                          aria-labelledby="modalLabel" aria-hidden="true">
@@ -258,13 +257,13 @@
                                             </div>
                                         </form>
                                     </div>
+
                                     </tbody>
                                 </table>
                                 <hr/>
                             </div>
                         </div>
                     </div>
-
 
                     <div class="tab-pane fade" id="nav-create" role="tabpanel" aria-labelledby="nav-create-tab">
                         <div class="panel-heading h4">Add new user</div>
@@ -327,6 +326,8 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
 
 </body>

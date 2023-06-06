@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:security="">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -18,27 +18,15 @@
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" th:text="${user.getUsername()} + ' with roles: ' + ${user.rolesToString()}" href="#">ЕМАИЛ И
-        РОЛЬ</a>
-    </div>
+    <span class="navbar-brand" th:text="${user.getUsername()} + ' with roles: ' + ${user.rolesToString()}">email, role</span>
     <a th:href="@{/logout}" class="btn btn-link text-white-50">Logout</a>
-    </div>
-    </div>
 </nav>
+
 <div class="row no-gutters " >
+
     <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-md-block sidebar collapse">
         <div class="position-sticky pt-2">
-<!--            <div sec:authorize="hasRole('ADMIN')">-->
-<!--                ТЕСТ ТОЛЬКО АДМИН-->
-<!--            </div>-->
             <ul class="nav nav-pills flex-column">
-<!--                <security:authorize access="hasRole('ROLE_ADMIN')">-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" aria-current="page" href="/admin">-->
-<!--                        Admin-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                </security:authorize>-->
                 <li class="nav-item">
                     <a class="nav-link active" href="/user">
                         User
@@ -47,6 +35,7 @@
             </ul>
         </div>
     </nav>
+
     <div class="col-md-10 bg-light">
         <div class="tab-content">
             <div class="container-fluid">
@@ -85,7 +74,14 @@
 
                                 </table>
 
-
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
